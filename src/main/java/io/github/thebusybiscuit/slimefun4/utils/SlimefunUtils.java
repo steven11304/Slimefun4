@@ -52,7 +52,7 @@ public final class SlimefunUtils {
     private static final String NO_PICKUP_METADATA = "no_pickup";
 
     private static final NamespacedKey SOULBOUND_KEY = new NamespacedKey(SlimefunPlugin.instance(), "soulbound");
-    private static final String SOULBOUND_LORE = ChatColor.GRAY + "灵魂绑定";
+    private static final String SOULBOUND_LORE = ChatColor.GRAY + "靈魂綁定";
 
     private SlimefunUtils() {
     }
