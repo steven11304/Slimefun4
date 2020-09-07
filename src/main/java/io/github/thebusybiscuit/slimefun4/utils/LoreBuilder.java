@@ -20,8 +20,8 @@ import java.util.Locale;
 public final class LoreBuilder {
 
     public static final String HAZMAT_SUIT_REQUIRED = "&8\u21E8 &4需要防化服!";
-    public static final String RIGHT_CLICK_TO_USE = "&e右键&7 使用";
-    public static final String RIGHT_CLICK_TO_OPEN = "&e右键&7 打开";
+    public static final String RIGHT_CLICK_TO_USE = "&e右鍵&7 使用";
+    public static final String RIGHT_CLICK_TO_OPEN = "&e右鍵&7 打開";
     public static final String CROUCH_TO_USE = "&e按住 &eShift&7 使用";
     private static final DecimalFormat hungerFormat = new DecimalFormat("#.0", DecimalFormatSymbols.getInstance(Locale.ROOT));
 
@@ -41,7 +41,7 @@ public final class LoreBuilder {
     }
 
     public static String powerBuffer(int power) {
-        return power(power, " 可储存");
+        return power(power, " 可儲存");
     }
 
     public static String powerPerSecond(int power) {
@@ -61,7 +61,7 @@ public final class LoreBuilder {
     }
 
     public static String hunger(double value) {
-        return "&7&o恢复 &b&o" + hungerFormat.format(value) + " &7&o的饥饿值";
+        return "&7&o恢覆 &b&o" + hungerFormat.format(value) + " &7&o的饑餓值";
     }
 
 }
