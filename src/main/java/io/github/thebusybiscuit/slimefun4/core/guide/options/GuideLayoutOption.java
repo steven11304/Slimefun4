@@ -46,18 +46,18 @@ class GuideLayoutOption implements SlimefunGuideOption<SlimefunGuideLayout> {
             }
 
             ItemMeta meta = item.getItemMeta();
-            meta.setDisplayName(ChatColor.GRAY + "Slimefun 指南样式: " + ChatColor.YELLOW + ChatUtils.humanize(layout.name()));
+            meta.setDisplayName(ChatColor.GRAY + "黏液科技 指南樣式: " + ChatColor.YELLOW + ChatUtils.humanize(layout.name()));
             List<String> lore = new ArrayList<>();
             lore.add("");
             lore.add((layout == SlimefunGuideLayout.CHEST ? ChatColor.GREEN : ChatColor.GRAY) + "箱子界面");
-            lore.add((layout == SlimefunGuideLayout.BOOK ? ChatColor.GREEN : ChatColor.GRAY) + "书与笔界面");
+            lore.add((layout == SlimefunGuideLayout.BOOK ? ChatColor.GREEN : ChatColor.GRAY) + "書與筆界面");
 
             if (p.hasPermission("slimefun.cheat.items")) {
                 lore.add((layout == SlimefunGuideLayout.CHEAT_SHEET ? ChatColor.GREEN : ChatColor.GRAY) + "作弊界面");
             }
 
             lore.add("");
-            lore.add(ChatColor.GRAY + "\u21E8 " + ChatColor.YELLOW + "单击修改指南样式");
+            lore.add(ChatColor.GRAY + "\u21E8 " + ChatColor.YELLOW + "單擊修改指南樣式");
             meta.setLore(lore);
             item.setItemMeta(meta);
 
