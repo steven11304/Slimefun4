@@ -53,7 +53,7 @@ public class ChestSlimefunGuide implements SlimefunGuideImplementation {
 
     public ChestSlimefunGuide(boolean vanillaRecipes) {
         showVanillaRecipes = vanillaRecipes;
-        item = new SlimefunGuideItem(this, "&aSlimefun 指南 &7(箱子界面)");
+        item = new SlimefunGuideItem(this, "&a黏液科技 指南 &7(箱子界面)");
 
         if (SlimefunPlugin.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_14)) {
             sound = Sound.ITEM_BOOK_PAGE_TURN;
@@ -215,9 +215,9 @@ public class ChestSlimefunGuide implements SlimefunGuideImplementation {
                 if (isSurvivalMode() && research != null && !profile.hasUnlocked(research)) {
                     if (Slimefun.hasPermission(p, sfitem, false)) {
                         if (VaultHelper.isUsable()) {
-                            menu.addItem(index, new CustomItem(Material.BARRIER, "&f" + ItemUtils.getItemName(sfitem.getItem()), "&4&l" + SlimefunPlugin.getLocalization().getMessage(p, "guide.locked"), "", "&a> 单击解锁", "", "&7需要 &b" + (research.getCost() * SlimefunPlugin.getCfg().getDouble("researches.money-multiply")) + " 游戏币"));
+                            menu.addItem(index, new CustomItem(Material.BARRIER, "&f" + ItemUtils.getItemName(sfitem.getItem()), "&4&l" + SlimefunPlugin.getLocalization().getMessage(p, "guide.locked"), "", "&a> 單擊解鎖", "", "&7需要 &b" + (research.getCost() * SlimefunPlugin.getCfg().getDouble("researches.money-multiply")) + " 遊戲幣"));
                         } else {
-                            menu.addItem(index, new CustomItem(Material.BARRIER, "&f" + ItemUtils.getItemName(sfitem.getItem()), "&4&l" + SlimefunPlugin.getLocalization().getMessage(p, "guide.locked"), "", "&a> 单击解锁", "", "&7需要 &b" + research.getCost() + " 级经验"));
+                            menu.addItem(index, new CustomItem(Material.BARRIER, "&f" + ItemUtils.getItemName(sfitem.getItem()), "&4&l" + SlimefunPlugin.getLocalization().getMessage(p, "guide.locked"), "", "&a> 單擊解鎖", "", "&7需要 &b" + research.getCost() + " 級經驗"));
                         }
                         menu.addMenuClickHandler(index, (pl, slot, item, action) -> {
                             if (!SlimefunPlugin.getRegistry().getCurrentlyResearchingPlayers().contains(pl.getUniqueId())) {
@@ -532,7 +532,7 @@ public class ChestSlimefunGuide implements SlimefunGuideImplementation {
         GuideHistory history = profile.getGuideHistory();
 
         if (isSurvivalMode() && history.size() > 1) {
-            menu.addItem(slot, new CustomItem(ChestMenuUtils.getBackButton(p, "", "&f左键: &7返回上一页", "&fShift + 左键: &7返回主菜单")));
+            menu.addItem(slot, new CustomItem(ChestMenuUtils.getBackButton(p, "", "&f左鍵: &7返回上一頁", "&fShift + 左鍵: &7返回主菜單")));
 
             menu.addMenuClickHandler(slot, (pl, s, is, action) -> {
                 if (action.isShiftClicked()) {
@@ -557,7 +557,7 @@ public class ChestSlimefunGuide implements SlimefunGuideImplementation {
             SlimefunItem slimefunItem = SlimefunItem.getByItem(item);
             if (slimefunItem == null) return item;
 
-            String lore = Slimefun.hasPermission(p, slimefunItem, false) ? "&f需要在别处解锁" : "&f没有权限";
+            String lore = Slimefun.hasPermission(p, slimefunItem, false) ? "&f需要在別處解鎖" : "&f沒有權限";
             return Slimefun.hasUnlocked(p, slimefunItem, false) ? item : new CustomItem(Material.BARRIER, ItemUtils.getItemName(item), "&4&l" + SlimefunPlugin.getLocalization().getMessage(p, "guide.locked"), "", lore);
         } else {
             return item;
