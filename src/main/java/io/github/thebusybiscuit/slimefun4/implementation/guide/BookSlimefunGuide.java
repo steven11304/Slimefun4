@@ -38,7 +38,7 @@ public class BookSlimefunGuide implements SlimefunGuideImplementation {
     private final ItemStack item;
 
     public BookSlimefunGuide() {
-        item = new SlimefunGuideItem(this, "&aSlimefun 指南 &7(书与笔 GUI)");
+        item = new SlimefunGuideItem(this, "&a黏液科技 指南 &7(書與筆 GUI)");
     }
 
     @Override
@@ -188,7 +188,7 @@ public class BookSlimefunGuide implements SlimefunGuideImplementation {
 
             openBook(p, profile, items, true);
         } else {
-            p.sendMessage(ChatColor.RED + "这个类别太大了以至于无法打开 :/");
+            p.sendMessage(ChatColor.RED + "這個類別太大了以至於無法打開 :/");
         }
     }
 
@@ -200,9 +200,9 @@ public class BookSlimefunGuide implements SlimefunGuideImplementation {
 
             ChatComponent component = new ChatComponent(ChatUtils.crop(ChatColor.RED, item.getItemName()) + "\n");
             if (VaultHelper.isUsable()) {
-                component.setHoverEvent(new HoverEvent(ChatColor.RESET + item.getItemName(), ChatColor.DARK_RED.toString() + ChatColor.BOLD + SlimefunPlugin.getLocalization().getMessage(p, "guide.locked"), "", ChatColor.GREEN + "> 单击解锁", "", ChatColor.GRAY + "需要 " + (research.getCost() * SlimefunPlugin.getCfg().getDouble("researches.money-multiply")) + " 游戏币"));
+                component.setHoverEvent(new HoverEvent(ChatColor.RESET + item.getItemName(), ChatColor.DARK_RED.toString() + ChatColor.BOLD + SlimefunPlugin.getLocalization().getMessage(p, "guide.locked"), "", ChatColor.GREEN + "> 單擊解鎖", "", ChatColor.GRAY + "需要 " + (research.getCost() * SlimefunPlugin.getCfg().getDouble("researches.money-multiply")) + " 遊戲幣"));
             } else {
-                component.setHoverEvent(new HoverEvent(ChatColor.RESET + item.getItemName(), ChatColor.DARK_RED.toString() + ChatColor.BOLD + SlimefunPlugin.getLocalization().getMessage(p, "guide.locked"), "", ChatColor.GREEN + "> 单击解锁", "", ChatColor.GRAY + "需要 " + ChatColor.AQUA.toString() + research.getCost() + " 级经验"));
+                component.setHoverEvent(new HoverEvent(ChatColor.RESET + item.getItemName(), ChatColor.DARK_RED.toString() + ChatColor.BOLD + SlimefunPlugin.getLocalization().getMessage(p, "guide.locked"), "", ChatColor.GREEN + "> 單擊解鎖", "", ChatColor.GRAY + "需要 " + ChatColor.AQUA.toString() + research.getCost() + " 級經驗"));
             }
             component.setClickEvent(new ClickEvent(key, player -> research(player, profile, item, research, category, page)));
 
