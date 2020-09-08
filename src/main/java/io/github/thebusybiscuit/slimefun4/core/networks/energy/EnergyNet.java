@@ -108,7 +108,7 @@ public class EnergyNet extends Network {
         AtomicLong timestamp = new AtomicLong(SlimefunPlugin.getProfiler().newEntry());
 
         if (!regulator.equals(b.getLocation())) {
-            SimpleHologram.update(b, "&4检测到附近有其他调节器");
+            SimpleHologram.update(b, "&4檢測到附近有其他調節器");
             SlimefunPlugin.getProfiler().closeEntry(b.getLocation(), SlimefunItems.ENERGY_REGULATOR.getItem(), timestamp.get());
             return;
         }
@@ -116,7 +116,7 @@ public class EnergyNet extends Network {
         super.tick();
 
         if (connectorNodes.isEmpty() && terminusNodes.isEmpty()) {
-            SimpleHologram.update(b, "&4找不到能源网络");
+            SimpleHologram.update(b, "&4找不到能源網絡");
         } else {
             int supply = tickAllGenerators(timestamp::getAndAdd) + tickAllCapacitors();
             int remainingEnergy = supply;
